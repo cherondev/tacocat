@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
-		<title>REWIND: A Coding Project by CHeron</title>
+		<title>TACO CAT: A Coding Project by CHeron</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta
@@ -32,7 +32,7 @@
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.html"
 					><img
-					src="img/favicon_io/favicon-32x32.png" alt="Norech Tech Logo" class="d-inline-block align-text-top" width="30" height="24" /> REWIND</a>
+					src="img/favicon_io/favicon-32x32.png" alt="Norech Tech Logo" class="d-inline-block align-text-top" width="30" height="24" /> TACO CAT</a>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -55,7 +55,7 @@
 							<a class="nav-link" href="code.html">The Code</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="https://github.com/cherondev/Loops" target="_blank">Git Repo</a>
+							<a class="nav-link" href="https://github.com/cherondev/tacocat" target="_blank">Git Repo</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#portfolio-link" target="_blank">About</a>
@@ -69,26 +69,29 @@
          <div class="container mt-5">
 				<div class="row row-cols-1 row-cols-lg-2">
 					<div class="col">
-						<h1 class="display-5 fw-bold lh-1 mb-3">REWIND: A Coding Project</h1>
-						<h4 class="lead mb-3">Rewind back to start &#8210; A JavaScript coding exercise using arrays. Write a program that displays a string in reverse.</h4>
+						<h1 class="display-5 fw-bold lh-1 mb-3">TACO CAT: A Coding Project</h1>
+						<h4 class="lead mb-3">Palindrome fun &#8210; A JavaScript coding exercise using arrays to check if a word, phrase, or sequence is a palindrome.</h4>
+						<h2 class="mt-5 border-top border-2">Instructions</h2>
+						<p>Enter a fizz and a buzz value. Click the button and the values will appear.</p>
 					</div>
-					<div class="col">
-						<h5 class="border-1 border-bottom border-danger">Enter A String To Reverse</h5>
+					<div class="col border-start border-2">
+						<h5 class="">Enter A Word, Sentence or Phrase</h5>
 						<form class="row gx-3 gy-2" action="">
 							<div class="col">
-								<input id="userString" type="text" class="form-control" placeholder="Enter a string" aria-label="Enter a string">
+								<input id="userString" type="text" class="form-control" placeholder="TacoCat" value="TacoCat" aria-label="Enter a string">
 							</div>
 							<div class="col-12">
-								<button type="button" id="btnSubmit" class="btn btn-danger fw-semibold">Reverse Me</button>
+								<button type="button" id="btnSubmit" class="btn btn-danger fw-semibold">Check It</button>
 							</div>
 							<div class="alert alert-danger mt-5 invisible fade show" id="alert" role="alert">
-								<h4 class="alert-heading">Well Done!</h4>
+								<h4 id="msgTitle" class="alert-heading">Well Done!</h4>
 								<hr>
 								<p id="msg" class="mb-0">
 									<!-- Insert a Message Here -->
 								</p>
 							</div>
 						</form>
+						<!-- <h2 class="mt-5 border-bottom border-2">Results</h2> -->
 					</div> 
 				</div>
          </div>

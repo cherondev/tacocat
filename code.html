@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
-		<title>REWIND: A Coding Project by CHeron</title>
+		<title>TACO CAT: A Coding Project by CHeron</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta
@@ -30,7 +30,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.html"><img
-						src="img/favicon_io/favicon-32x32.png" alt="Norech Tech Logo" class="d-inline-block align-text-top" width="30" height="24" /> REWIND</a>
+						src="img/favicon_io/favicon-32x32.png" alt="Norech Tech Logo" class="d-inline-block align-text-top" width="30" height="24" /> TACO CAT</a>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -54,7 +54,7 @@
 							<a class="nav-link active" aria-current="page"  href="code.html">The Code</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="https://github.com/cherondev/Loops" target="_blank">Git Repo</a>
+							<a class="nav-link" href="https://github.com/cherondev/tacocat" target="_blank">Git Repo</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#portfolio-link" target="_blank">About</a>
@@ -66,7 +66,7 @@
 		<!-- === Main Section === -->
 		<main class="flex-shrink-0">
          <div class="container py-4 px-5 mt-5">
-				<h2 class="norder-1 border-bottom border-dark">The Code for REWIND</h2>
+				<h2 class="norder-1 border-bottom border-dark">The Code for TACO CAT</h2>
 				<div class="row row-cols-1 row-cols-lg-2">
 					<div class="col-lg-8">
 						<pre class="line-numbers">
@@ -76,12 +76,28 @@
 								function getValues() {
 									document.getElementById("alert").classList.add("invisible");
 
+									//Get user input and convert it to lowercase
 									let userString = document.getElementById("userString").value;
-									let revString = reverseString(userString);
-									displayString(revString);
-								}
+									userString = userString.toLowerCase();
 
-								// Reverse the string
+									//Remove special characters, spaces, and numbers
+									userString = userString.replace(/[^a-zA-Z]/g, '');
+								
+									//Call reverse string function
+									let revString = reverseString(userString);
+
+									//Initialize message title an empty string
+									let messageTitle = "";
+
+									//Compare reverse string to "cleaned up" user string and assign appropriate message to messageTitle variable
+									if (userString == revString) {
+										messageTitle = "Well done! You entered a palindrome!";
+									} else {
+										messageTitle = "That is not a palindrome. Try again."
+									}
+									//Call display string function and pass it revString and messageTile parameters
+									displayString(revString, messageTitle);
+								}
 								//Logic Function
 								function reverseString(userString) {
 									//Initialize empty array
@@ -93,13 +109,14 @@
 									}
 									return revString;
 								}
-
 								//Display the reverse string to the user
-								//View Function
-								function displayString(revstring) {
-									//Write the mssage to the page
-									document.getElementById("msg").innerHTML = `Your reversed string is: ${revstring}`;
+								function displayString(revString, messageTitle) {
+									//Write the message title to the screen
+									document.getElementById("msgTitle").innerHTML = messageTitle;
 
+									//Write the reverse string to the screen
+									document.getElementById("msg").innerHTML = `Your reversed string is:<strong>  ${revString}</strong>`;
+									
 									//Show the alert box
 									document.getElementById("alert").classList.remove("invisible");
 								}
@@ -107,15 +124,17 @@
 						</pre>
 					</div>
 					<div class="col-lg-4">
-						<h5>REWIND</h5>
+						<h5>TACO CAT</h5>
 							<p>Loops is an app that loops through a string entered by a user abd reverses the position of each character. The code contains three functions: getValues(), reverseString(), and displayString().</p>
 							<h5>Function: getValues()</h5>
 								<p><ol>
-									<li>This function gets the <strong>value</strong> of the string entered in the from by a user.</li>
-									<li>The value is assigned to a variable called userString.</li>
-									<li>The function reverseString() is called and assigned to the variable revString which will contain the reversed characters after they are processed by the calling function.</li>
-									<li>Then, displayString() function is called which will display the reversed characters on the screen.</li>
 									<li>The first statement in this function block adds an "invisible" class to the div with the id "alert" which will be removed to reveal a status message after the string has been reversed.</li>
+									<li>The function gets the <strong>value</strong> of the string entered in the from by a user.</li>
+									<li>The value is assigned to a variable called userString and converted to lowercase.</li>
+									<li>Special characters, spaces, and numbers are removed.</li>
+									<li>The function reverseString() is called and assigned to the variable revString which will contain the reversed characters after they are processed by the calling function.</li>
+									<li>Message title is initializes to an empty string followed by an IF statement which evaluates the "cleaned up" user input against the reverse string to determine if the string is a palindrome or not. Then, it assigns the appropriate resulting message to messageTitle.</li>
+									<li>Then, displayString() function is called which will display the reversed characters on the screen. It passes two parameters, revString and messageTitle, to the function.</li>
 									</ol>
 								</p>
 							<h5>Function: reverseString()</h5>
@@ -132,6 +151,7 @@
 							<h5>Function: displayString()</h5>
 							<p><ol>
 								<li>The purpose of this function is to display the reversed string on the HTML page. This is accomplished by assigning the reversed string to the id "msg" via the innerHTML property of the getElementById method of the DOM.</li>
+								<li>Likewise, the message title is also assigned to the page via the innerHTML property of the getElementById method of the DOM.  </li>
 								<li>Then, the "invisible" class is removed from the "div" tag with the "alert" id to display the status message on the page.</li>
 								</ol>
 							</p>
